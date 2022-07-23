@@ -2,6 +2,7 @@ import { EditRoutineDto } from './dtos/edit.dto';
 import { Injectable } from '@nestjs/common';
 import { Routine } from './routine.entity';
 import { isSet } from 'util/types';
+import { NotFoundError } from 'rxjs';
 
 let routines =  [
     {id: 1, name: 'Flat', amount: 2200},
@@ -22,7 +23,6 @@ export class RoutineService {
 
     create(name: string, amount: number) {
         const id = routines.length + 1;
-        console.log("id",{id});
         const newRoutine = {id, name, amount};
         console.log(newRoutine);
         routines.push(newRoutine);

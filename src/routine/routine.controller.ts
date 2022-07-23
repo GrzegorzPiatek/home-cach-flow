@@ -11,6 +11,7 @@ export class RoutineController {
 
     @Get()
     getAll() {
+        console.log(this.routineService.getAll());
         return this.routineService.getAll();
     }
 

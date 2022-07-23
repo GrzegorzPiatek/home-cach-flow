@@ -1,6 +1,6 @@
+import { RoutineModule } from './routine/routine.module';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { RoutineModule } from './routine/routine.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 
@@ -12,9 +12,9 @@ import { UsersModule } from './users/users.module';
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    RoutineModule,
     AuthModule,
-    UsersModule
+    UsersModule,
+    RoutineModule
   ],
 })
 export class AppModule { }
